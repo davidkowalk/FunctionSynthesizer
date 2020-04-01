@@ -52,8 +52,8 @@ def to_str(polynomial: array):
 
     return function
 
-def function(polynomial: array, x):
-    
+def calculate(polynomial: array, x: float):
+
     pow = len(polynomial)-1
     f = 0
 

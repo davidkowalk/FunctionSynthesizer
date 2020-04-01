@@ -25,14 +25,22 @@ import function_synth as synth
 
 ## Functions
 
+**Functions**
+
+|          Name           | Description |
+|-------------------------|-------------|
+| [solve](#solve)         | Solves for the coefficients of a polynomial function through a set a points.
+| [to_str](#to_str)       | Takes an array with coefficients and generates a string expression of the polynomial equation.
+| [calculate](#calculate) | Takes in a List of coefficients and an x-value to calculate f(x).
+
 ### solve()
 
 Solves for the coefficients of a polynomial function through a set a points.
 
 |   Parameters  |     Type    |Description|Required|
 |---------------|-------------|-----------|--------|
-| points        | numpy.array | An array of the points the function should run through. (2D)| yes |
-| suspend_tests | Boolean     | Whether the imputs should be checked. **Default: False**    | no  |
+| points        | numpy.array | An array of the points the function should run through. (2D)            | yes |
+| suspend_tests | Boolean     | Whether the imputs should be passed without checked. **Default: False** | no  |
 
 The array of points must have the format 2*n:
 ```
@@ -44,7 +52,7 @@ points = numpy.array([
 ])
 ```
 
-Example:
+**Example:**
 
 ```
 points = array([
@@ -74,7 +82,7 @@ Takes an array with coefficients and generates a string expression of the polyno
 |---------------|-------------|-----------|--------|
 | coefficients  | numpy.array or List | An array of the functions coefficients.| yes |
 
-Example:
+**Example:**
 ```
 coefficients = [ -0.05, 0.5, 10 ]
 eqn = synth.to_str(coefficients)
@@ -84,4 +92,27 @@ print(eqn)
 Output:
 ```
 f(x) = -0.05 x² + 0.5 x + 10
+```
+
+### calculate()
+
+Takes in a List of coefficients and an x-value to calculate f(x) where ``f(x) = SUMM [k=0 to n]  (a_k*x^k)``
+
+|   Parameters  |     Type    |Description|Required|
+|---------------|-------------|-----------|--------|
+| coefficients  | numpy.array or List | An array of the functions coefficients.| yes |
+| x             | float or int        | The point to be calculated | yes |
+
+**Example:**
+
+```
+coefficients = [ -0.05, 0.5, 10 ]
+x = 3
+
+y = synth.calculate(coefficients, x)
+print(y)
+```
+Output:
+```
+10
 ```
