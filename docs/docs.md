@@ -31,7 +31,7 @@ Solves for the coefficients of a polynomial function through a set a points.
 
 |   Parameters  |     Type    |Description|Required|
 |---------------|-------------|-----------|--------|
-| points        | numpy.array or List | An array of the points the function should run through. (2D)| yes |
+| points        | numpy.array | An array of the points the function should run through. (2D)| yes |
 | suspend_tests | Boolean     | Whether the imputs should be checked. **Default: False**    | no  |
 
 The array of points must have the format 2*n:
