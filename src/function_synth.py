@@ -37,7 +37,17 @@ def solve(points: array, suspend_tests = False):
     return coefficients
 
 
-
-
 def to_str(polynomial: array):
-    pass
+    function = "f(x) = "
+
+    pow = len(polynomial)-1
+
+    for coefficient in polynomial:
+        if pow > 0:
+            function += f"{coefficient}*x^{pow} + "
+        else:
+            function += f"{coefficient}"
+
+        pow -= 1
+
+    return function
