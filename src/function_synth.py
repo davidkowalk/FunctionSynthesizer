@@ -51,3 +51,14 @@ def to_str(polynomial: array):
         pow -= 1
 
     return function
+
+def function(polynomial: array, x):
+    
+    pow = len(polynomial)-1
+    f = 0
+
+    for coefficient in polynomial:
+        f += coefficient*x**pow
+        pow -= 1
+
+    return f
