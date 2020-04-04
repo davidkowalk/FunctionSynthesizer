@@ -6,6 +6,8 @@ The API prepares the matrix and then runs it through ``numpy.solve_linalg()`` to
 
 ![Demo Picture](https://github.com/davidkowalk/FunctionSynthesizer/blob/master/docs/Example-6-Points.png?raw=true)
 
+See the docs for a guide.
+
 ## Dependencies
 
 - numpy

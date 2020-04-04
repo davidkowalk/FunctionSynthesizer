@@ -10,12 +10,12 @@ This API provides an easy way to generate a polynomial from a set of n points.
 ## Importing the API
 To import this API, first clone it from [GitHub](http://github.com/DapfiDuck/FunctionSynthesizer) with
 
-```
+```bash
 git clone https://github.com/davidkowalk/FunctionSynthesizer.git
 ```
 or download it from the [GitHub page](http://github.com/DapfiDuck/FunctionSynthesizer).
 Then copy the file ``src/function_synth.py`` into the source folder of your project and import it with:
-```
+```python
 import function_synth as synth
 ```
 
@@ -43,7 +43,7 @@ Solves for the coefficients of a polynomial function through a set a points.
 | suspend_tests | Boolean     | Whether the imputs should be passed without checked. **Default: False** | no  |
 
 The array of points must have the format 2*n:
-```
+```python
 points = numpy.array([
   [x1, y1],
   [x2, y2],
@@ -54,7 +54,7 @@ points = numpy.array([
 
 **Example:**
 
-```
+```python
 points = array([
   [0, 0],
   [4, 2],
@@ -70,7 +70,7 @@ print(coefficients)
 ```
 
 Output:
-```
+```python
 [-3.30687831e-05  1.32275132e-03 -1.85185185e-02  1.05820106e-01  2.96825397e-01  0.00000000e+00]
 ```
 
@@ -83,7 +83,7 @@ Takes an array with coefficients and generates a string expression of the polyno
 | coefficients  | numpy.array or List | An array of the functions coefficients.| yes |
 
 **Example:**
-```
+```python
 coefficients = [ -0.05, 0.5, 10 ]
 eqn = synth.to_str(coefficients)
 
@@ -105,7 +105,7 @@ Takes in a List of coefficients and an x-value to calculate f(x) where ``f(x) = 
 
 **Example:**
 
-```
+```python
 coefficients = [ -0.05, 0.5, 10 ]
 x = 3
 
