@@ -8,7 +8,7 @@ This API provides an easy way to generate a polynomial from a set of n points.
 - Functions
 
 ## Importing the API
-To import this API, first clone it from [GitHub](http://github.com/DapfiDuck/FunctionSynthesizer) with
+To import this API, first clone it from [GitHub](http://github.com/davidkowalk/FunctionSynthesizer) with
 
 ```bash
 git clone https://github.com/davidkowalk/FunctionSynthesizer.git
