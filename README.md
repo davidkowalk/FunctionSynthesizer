@@ -11,7 +11,7 @@ See the docs for a guide.
 ## Dependencies
 
 - numpy
-- python 2.7 (earlier versions untested)
+- python 3.6 (earlier versions untested)
 
 ## About
 
