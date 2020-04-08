@@ -2,6 +2,27 @@ from numpy.linalg import solve as solve_linalg
 from numpy import empty as new_array
 from numpy import array
 
+
+def __derive__(a, power, n):
+    """Takes a*x^power and the derivation number.
+    Returns a numpy array of the coefficient and the power: a*x^b -> array([a, b])"""
+
+    if n <= 0:
+        raise ValueError("Can't integrate.")
+
+    a *= power
+
+    if power > 0:
+        power -= 1
+
+    n -= 1
+
+    if n <= 0 or (a == 0 and power == 0):
+        return array([a, power])
+    else:
+        return __derive__(a, power, n)
+
+
 def solve(points: array, suspend_tests = False):
 
     y_size, x_size = points.shape
