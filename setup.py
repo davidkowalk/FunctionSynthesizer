@@ -1,5 +1,4 @@
 from distutils.core import setup
-import os
 
 def README():
     return open("README.md").read()
