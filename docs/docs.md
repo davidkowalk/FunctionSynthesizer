@@ -16,7 +16,7 @@ git clone https://github.com/davidkowalk/FunctionSynthesizer.git
 or download it from the [GitHub page](http://github.com/DapfiDuck/FunctionSynthesizer).
 Then copy the file ``src/function_synth.py`` into the source folder of your project and import it with:
 ```python
-import function_synth as synth
+import function_synth as fs
 ```
 
 ## Dependencies
@@ -66,7 +66,7 @@ points = array([
   [22, 0]
 ])
 
-coefficients = synth.solve(points)
+coefficients = fs.solve(points)
 
 print(coefficients)
 ```
@@ -127,7 +127,7 @@ Takes an array with coefficients and generates a string expression of the polyno
 **Example:**
 ```python
 coefficients = [ -0.05, 0.5, 10 ]
-eqn = synth.to_str(coefficients)
+eqn = fs.to_str(coefficients)
 
 print(eqn)
 ```
@@ -151,7 +151,7 @@ Takes in a List of coefficients and an x-value to calculate f(x) where ``f(x) = 
 coefficients = [ -0.05, 0.5, 10 ]
 x = 3
 
-y = synth.calculate(coefficients, x)
+y = fs.calculate(coefficients, x)
 print(y)
 ```
 Output:
