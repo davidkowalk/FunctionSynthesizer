@@ -27,7 +27,7 @@ import function_synth as fs
 ```
 
 ## Dependencies
-- Python 2.7
+- Python 3.6
 - numpy
 
 ## Functions
