@@ -1,6 +1,6 @@
 # Function Synthesizer
 
-This API provides an easy way to generate a polynomial from a set of n points.
+This API provides an easy way to generate a polynomial interpolation from a set of n points.
 
 **Contents**
 - Importing the API
@@ -14,7 +14,14 @@ To import this API, first clone it from [GitHub](http://github.com/davidkowalk/F
 git clone https://github.com/davidkowalk/FunctionSynthesizer.git
 ```
 or download it from the [GitHub page](http://github.com/DapfiDuck/FunctionSynthesizer).
-Then copy the file ``src/function_synth.py`` into the source folder of your project and import it with:
+Then copy the file ``src/function_synth.py`` into the source folder of your project.
+
+Alternatively you can use pip to import the API into your python-environment from the unpacked download. Make sure to link to the folder with ``setup.py``:
+```bash
+pip install ~/Path/To/Repo/Folder/
+```
+
+Now import the API with:
 ```python
 import function_synth as fs
 ```
