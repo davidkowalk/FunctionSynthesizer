@@ -99,7 +99,10 @@ def solve(points: array, suspend_tests = False, steps = False):
 
     coefficients = solve_linalg(matrix, solutions)
 
-    return coefficients
+    if steps:
+        return (coefficients, matrix, solutions)
+    else:
+        return coefficients
 
 
 def to_str(polynomial: array):
