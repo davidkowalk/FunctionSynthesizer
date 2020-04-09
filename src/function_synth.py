@@ -4,7 +4,8 @@ from numpy import array
 
 
 def __derive__(a, power, n):
-    """Takes a*x^power and the derivation number.
+    """
+    Takes a*x^power and the derivation number.
     Returns a numpy array of the coefficient and the power: a*x^b -> array([a, b])"""
 
     if n < 0:
@@ -26,6 +27,24 @@ def __derive__(a, power, n):
 
 
 def solve_mixed(points: array, suspend_tests = False, steps = False):
+
+    """
+    Takes a set of points with a derivative assigned to each and generates the coefficients of a polynomial interpolation where each point lies on it's respective derivative.
+    The 0th derivative is f(x) while the first derivative is f'(x) or df/dx and so forth.
+
+
+    Example
+    -------
+    >>> points = numpy.array([
+    >>> [2,1,0], # On the function f(x)
+    >>> [8,1,0], # On the function f(x)
+    >>> [1,2,1]  # On the derivative f'(x)
+    >>> ])
+
+    >>> fs.solve_mixed(points)
+
+    array([-0.25,  2.5 , -3.  ])
+    """
 
     y_size, x_size = points.shape
 
@@ -69,6 +88,23 @@ def solve_mixed(points: array, suspend_tests = False, steps = False):
 
 def solve(points: array, suspend_tests = False, steps = False):
 
+    """
+    Takes a set of points and generates the coefficients of a polynomial interpolation through all of the points.
+
+
+    Example
+    -------
+    >>> points = numpy.array([
+    >>> [1,1],
+    >>> [5,5],
+    >>> [-1,2]
+    >>> ])
+
+    >>> fs.solve(points)
+
+    array([ 0.25, -0.5 ,  1.25])
+    """
+
     y_size, x_size = points.shape
 
     if not suspend_tests:
@@ -106,6 +142,19 @@ def solve(points: array, suspend_tests = False, steps = False):
 
 
 def to_str(polynomial: array):
+
+    """
+    Takes a numpy.array or List of coefficients and renders the corresponding function.
+
+    Example
+    -------
+
+    >>> coefficients = numpy.array([ 0.25, -0.5 ,  1.25])
+    >>> print(fs.to_str(coefficients))
+
+    f(x) = 0.25*x^2 + -0.5*x^1 + 1.25
+    """
+
     function = "f(x) = "
 
     pow = len(polynomial)-1
@@ -121,6 +170,9 @@ def to_str(polynomial: array):
     return function
 
 def calculate(polynomial: array, x: float):
+    """
+    Takes a numpy.array or list of the coefficients and a point x and calculates the corresponding f(x).
+    """
 
     pow = len(polynomial)-1
     f = 0
