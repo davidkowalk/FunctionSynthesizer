@@ -16,7 +16,7 @@ git clone https://github.com/davidkowalk/FunctionSynthesizer.git
 or download it from the [GitHub page](http://github.com/DapfiDuck/FunctionSynthesizer).
 Then copy the file ``src/function_synth.py`` into the source folder of your project.
 
-Alternatively you can use pip to import the API into your python-environment from the unpacked download. Make sure to link to the folder with ``setup.py``:
+Alternatively you can use pip to import the API into your python-environment from the unpacked download. Make sure to link to the folder containing ``setup.py``:
 ```bash
 pip install ~/Path/To/Repo/Folder/
 ```
