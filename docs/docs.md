@@ -23,7 +23,7 @@ pip install ~/Path/To/Repo/Folder/
 
 Now import the API with:
 ```python
-import function_synth as fs
+import function_synthesizer as fs
 ```
 
 ## Dependencies
