@@ -182,3 +182,17 @@ def calculate(polynomial: array, x: float):
         pow -= 1
 
     return f
+
+
+def read(path, x_col, y_col, title=False, delimiter=",", quotechar="\""):
+    import csv
+
+    sheet = []
+
+    with open(path) as file:
+        reader = csv.DictReader(file, delimiter=delimiter, quotechar=quotechar)
+
+        for row in reader:
+            sheet.append([float(row[x_col]), float(row[y_col])])
+
+    return array(sheet)

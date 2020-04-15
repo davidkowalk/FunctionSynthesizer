@@ -4,7 +4,7 @@ def README():
     return open("README.md").read()
 
 setup(name='function_synthesizer',
-    version = '0.0.2',
+    version = '0.0.3',
     description = 'Generates a polynomial interpolation from a set up points',
     author = 'David J. Kowalk',
     author_email = 'david.kowalk@gmail.com',
