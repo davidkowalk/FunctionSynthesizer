@@ -184,7 +184,10 @@ def calculate(polynomial: array, x: float):
     return f
 
 
-def read(path, x_col, y_col, title=False, delimiter=",", quotechar="\""):
+def read(path: str, x_col: str, y_col: str, delimiter=",", quotechar="\""):
+    """
+    Reads values from a file
+    """
     import csv
 
     sheet = []

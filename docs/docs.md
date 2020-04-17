@@ -40,6 +40,7 @@ import function_synthesizer as fs
 | [solve_mixed](#solve_mixed) | Solves for the coefficients of a polynomial function through a set a points on the nth derivative
 | [to_str](#to_str)           | Takes an array with coefficients and generates a string expression of the polynomial equation.
 | [calculate](#calculate)     | Takes in a List of coefficients and an x-value to calculate f(x).
+| [read](#read)               | Reads list of points from a csv file.
 
 ### solve()
 
@@ -147,10 +148,10 @@ f(x) = -0.05 x² + 0.5 x + 10
 
 Takes in a List of coefficients and an x-value to calculate f(x) where ``f(x) = SUMM [k=0 to n]  (a_k*x^k)``
 
-|   Parameters  |     Type    |Description|Required|
-|---------------|-------------|-----------|--------|
+|   Parameters  |         Type        | Description | Required |
+|---------------|---------------------|-------------|----------|
 | coefficients  | numpy.array or List | An array of the functions coefficients.| yes |
-| x             | float or int        | The point to be calculated | yes |
+| x             | float or int        | The point to be calculated             | yes |
 
 **Example:**
 
@@ -164,4 +165,45 @@ print(y)
 Output:
 ```
 10
+```
+
+### read()
+
+Reads the data points from a csv-file.
+
+|   Parameters  |     Type    | Description | Required |
+|---------------|-------------|-------------|----------|
+| path          | String      | Path to the file | yes
+| x_col         | String      | Key (Name) of the column containing the x-values | yes
+| y_col         | String      | Key (Name) of the column containing the y-values | yes
+| delimiter     | String      | Delimiter between values **Default: ,**          | no
+| quotechar     | String      | Char that signals a quote **Default: "**         | no
+
+**Example**
+
+| Day | Temperature |
+|-----|-------------|
+| 1   | 6.9
+| 2   | 7.4
+| 3   | 5.2
+| 4   | 3.3
+| 5   | 3.4
+| 6   | 5.6
+| 7   | 6.5
+
+```python
+points = fs.read(path = "PATH/TO/FILE.csv", x_col = "Day", y_col = "Temperture")
+print(points)
+```
+Output:
+```python
+numpy.array([
+  [1, 6.9],
+  [2, 7.4],
+  [3, 5.2],
+  [4, 3.3],
+  [5, 3.4],
+  [6, 5.6],
+  [7, 6.5]
+])
 ```
